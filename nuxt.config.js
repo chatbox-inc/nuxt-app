@@ -1,4 +1,7 @@
 module.exports = {
+  env: {
+    GITHUB_TOKEN: process.env.GITHUB_TOKEN
+  },
   /*
   ** Headers of the page
   */
@@ -40,5 +43,8 @@ module.exports = {
   },
   plugins: [
     '~/plugins/element-ui'
-  ]
+  ],
+  modules: [
+    '@nuxtjs/dotenv',
+  ],
 }

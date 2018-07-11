@@ -55,3 +55,8 @@ https://developer.github.com/v3/auth/
 $ npm i axios 
 
 ```
+
+
+dotenv を活用する
+
+https://www.chatbox.blog/2018/03/26/nuxt_js_with_dotenv/
