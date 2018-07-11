@@ -20,9 +20,9 @@ module.exports = {
   /*
   ** Build configuration
   */
-  // css: [
-  //   '~/element-ui/lib/theme-chalk/index.css'
-  // ],
+  css: [
+    'element-ui/lib/theme-chalk/index.css'
+  ],
   build: {
     /*
     ** Run ESLint on save
@@ -38,7 +38,7 @@ module.exports = {
       }
     }
   },
-  // plugins: [
-  //   '~/plugins/element-ui'
-  // ]
+  plugins: [
+    '~/plugins/element-ui'
+  ]
 }

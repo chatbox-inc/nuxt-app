@@ -18,6 +18,8 @@
           target="_blank"
           class="button--grey">GitHub</a>
       </div>
+
+      <el-button>Default</el-button>
     </div>
   </section>
 </template>

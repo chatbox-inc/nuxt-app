@@ -46,3 +46,12 @@ module.exports = {
   ]
 }
 ```
+
+Github api 
+
+https://developer.github.com/v3/auth/
+
+```
+$ npm i axios 
+
+```
