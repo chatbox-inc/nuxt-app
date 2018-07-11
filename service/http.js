@@ -5,7 +5,7 @@ export const getClient = () => {
     baseURL: "https://api.github.com/",
     auth: {
       username: 'mikakane',
-      password: 'ce45019e749ef40e89d3e262ee9d752882e4f472'
+      password: process.env.GITHUB_TOKEN
     },
   });
   return api
