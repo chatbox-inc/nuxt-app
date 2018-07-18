@@ -11,8 +11,12 @@ export const getClient = () => {
   return api
 }
 
-export const getIssues = async () => {
+export const getIssues = async (payload) => {
   const api = getClient();
-  const {data} = await api.get("/repos/chatbox-inc/nuxt-app/issues")
+  const {data} = await api.get(
+    "/repos/chatbox-inc/nuxt-app/issues",
+    {
+      params: payload
+    })
   return data
 }

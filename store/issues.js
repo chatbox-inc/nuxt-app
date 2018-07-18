@@ -13,8 +13,8 @@ export const mutations = {
 }
 
 export const actions = {
-  async getIssues({commit}){
-    const issues = await getIssues()
+  async getIssues({commit},payload = {}){
+    const issues = await getIssues(payload)
     commit("SET_ISSUES",issues)
   }
 }

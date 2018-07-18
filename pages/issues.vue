@@ -1,6 +1,32 @@
 <template>
   <section>
 
+    <el-form ref="form">
+      <el-form-item label="Open/Close">
+        <el-switch v-model="form.status"></el-switch>
+      </el-form-item>
+      <el-form-item label="Label">
+        <el-input placeholder="Please input" v-model="form.label"></el-input>
+      </el-form-item>
+      <el-form-item label="Sort By">
+        <el-select v-model="form.sortBy" placeholder="please select ">
+          <el-option label="作成日順" value="created"></el-option>
+          <el-option label="更新日順" value="updated"></el-option>
+        </el-select>
+        &nbsp;
+        <el-radio-group v-model="form.order">
+          <el-radio label="desc"></el-radio>
+          <el-radio label="asc"></el-radio>
+        </el-radio-group>
+      </el-form-item>
+      <el-form-item label="Since">
+        <el-date-picker type="date" placeholder="Pick a date" v-model="form.since"></el-date-picker>
+      </el-form-item>
+    </el-form>
+
+    <el-button @click="reload">検索</el-button>
+    <el-button @click="reset">リセット</el-button>
+
     <el-table
       :data="issues"
       style="width: 100%">
@@ -24,10 +50,19 @@
 </template>
 
 <script>
+
+const makeDefaultFormState = ()=>({
+  label: "",
+  status: true,
+  sortBy: "created",
+  order: "desc",
+  since: null
+})
+
 export default {
   data(){
     return {
-
+      form: makeDefaultFormState()
     }
   },
   computed:{
@@ -37,6 +72,24 @@ export default {
   },
   mounted(){
     this.$store.dispatch("issues/getIssues")
+  },
+  methods:{
+    reload(){
+      const payload = {
+        state: this.form.status ? "open":"closed",
+        labels: this.form.label,
+        sort: this.form.sortBy,
+        direction: this.form.order
+      }
+      if(this.form.since){
+        payload.since = this.form.since.toISOString()
+      }
+      this.$store.dispatch("issues/getIssues",payload)
+    },
+    reset(){
+      this.form = makeDefaultFormState()
+      this.$store.dispatch("issues/getIssues")
+    }
   }
 }
 </script>
