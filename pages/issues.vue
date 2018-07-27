@@ -44,6 +44,14 @@
         prop="title"
         label="title">
       </el-table-column>
+      <el-table-column
+        label="edit">
+        <template slot-scope="scope">
+          <el-button
+            size="mini"
+            @click="linkToEditPage(scope.row)">Edit</el-button>
+        </template>
+      </el-table-column>
     </el-table>
 
   </section>
@@ -89,6 +97,9 @@ export default {
     reset(){
       this.form = makeDefaultFormState()
       this.$store.dispatch("issues/getIssues")
+    },
+    linkToEditPage(issue){
+      this.$router.push("/edit/"+issue.number)
     }
   }
 }

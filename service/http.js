@@ -20,3 +20,21 @@ export const getIssues = async (payload) => {
     })
   return data
 }
+
+export const createIssue = async (payload) => {
+  const api = getClient();
+  const {data} = await api.post(
+    "/repos/chatbox-inc/nuxt-app/issues",
+     payload
+  )
+  return data
+}
+
+export const updateIssue = async (issueNo,payload) => {
+  const api = getClient();
+  const {data} = await api.patch(
+    "/repos/chatbox-inc/nuxt-app/issues/"+issueNo,
+     payload
+  )
+  return data
+}
