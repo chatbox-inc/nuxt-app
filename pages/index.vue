@@ -2,10 +2,8 @@
   <section class="container">
     <div>
       <app-logo/>
-      <h1 class="title">
-        gh-issues
-      </h1>
-      <h2 class="subtitle">
+      <h1 class="title">gh-issues</h1>
+      <h2 class="subtitle">title
         Nuxt.js project
       </h2>
       <div class="links">

@@ -15,7 +15,6 @@
 import {createIssue} from "~/service/http";
 import IssueNew from "~/components/IssueNewForm.vue";
 
-
 export default {
   data(){
     return {

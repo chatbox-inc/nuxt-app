@@ -14,8 +14,11 @@
   },
   "dependencies": {
     "@nuxtjs/dotenv": "^1.1.1",
+    "ava": "^0.25.0",
     "axios": "^0.18.0",
     "element-ui": "^2.4.3",
+    "esm": "^3.0.72",
+    "jsdom": "^11.12.0",
     "nuxt": "^1.0.0"
   },
   "devDependencies": {
@@ -24,5 +27,10 @@
     "eslint-friendly-formatter": "^3.0.0",
     "eslint-loader": "^1.7.1",
     "eslint-plugin-vue": "^4.0.0"
+  },
+  "ava": {
+    "require": [
+      "esm"
+    ]
   }
 }
